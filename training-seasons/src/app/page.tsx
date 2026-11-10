@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const etapas = [
   { titulo: "Registro semanal", texto: "Anote seu peso em poucos segundos." },
   { titulo: "Gráfico de evolução", texto: "Veja o caminho até a sua meta." },
@@ -34,20 +36,18 @@ export default function Home() {
             celular ou no computador.
           </p>
           <div className="flex flex-col gap-3 pt-2 sm:flex-row">
-            <button
-              type="button"
-              disabled
-              className="min-h-12 rounded-xl bg-primary px-6 text-base font-semibold text-on-fill opacity-90"
+            <Link
+              href="/entrar"
+              className="flex min-h-12 items-center justify-center rounded-xl bg-primary px-6 text-base font-semibold text-on-fill"
             >
-              Entrar (em breve)
-            </button>
-            <button
-              type="button"
-              disabled
-              className="min-h-12 rounded-xl border-2 border-accent px-6 text-base font-semibold"
+              Entrar
+            </Link>
+            <Link
+              href="/cadastro"
+              className="flex min-h-12 items-center justify-center rounded-xl border-2 border-accent px-6 text-base font-semibold"
             >
-              Criar conta (em breve)
-            </button>
+              Criar conta
+            </Link>
           </div>
         </section>
 

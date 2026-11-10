@@ -3,7 +3,7 @@
 > Aplicação web (PWA) de controle e acompanhamento de peso.
 
 > Documento de definição do projeto (premissas e escopo).
-> Status: **v0.3 – stack aprovada, etapa 1 em andamento** | Data: 2026-11-10
+> Status: **v0.4 – etapa 2 (login) implementada, aguardando configuração do Supabase** | Data: 2026-11-10
 > Itens marcados com **[A CONFIRMAR]** são suposições minhas, ainda não validadas.
 
 ---
@@ -164,8 +164,8 @@ Alternativas simples (se preferir menos peças): Vite + React + Supabase.
 
 ## 11. Plano em etapas (sugestão)
 
-1. **Fundação:** projeto criado, tela inicial responsiva, PWA básico (manifest + ícones provisórios). **Feito.** Falta o deploy na Vercel (precisa da conta do dono do projeto).
-2. **Login:** cadastro, entrada, recuperar senha, regras de acesso no banco.
+1. **Fundação:** projeto criado, tela inicial responsiva, PWA básico (manifest + ícones provisórios). **Feito.** Deploy na Vercel a cargo do dono do projeto.
+2. **Login:** cadastro, entrada, recuperar senha, regras de acesso no banco. **Código pronto** (telas, ações, proteção de rotas, SQL com RLS). Falta criar o projeto no Supabase e configurar (ver `training-seasons/SUPABASE.md`).
 3. **Núcleo:** perfil, meta, registro semanal, lista do histórico.
 4. **Visualização:** gráfico, IMC, progresso da meta.
 5. **PWA:** instalável + lembrete semanal.
@@ -188,8 +188,10 @@ Alternativas simples (se preferir menos peças): Vite + React + Supabase.
 
 - [x] Aprovar a stack da seção 10.
 - [ ] Fazer o deploy na Vercel (ver `training-seasons/README.md`).
-- [ ] Confirmar semana começando na segunda e "só maiores de 18".
-- [ ] Definir como lidar com cadastro livre no plano gratuito (limites/verificação).
+- [x] "Só maiores de 18": implementado como confirmação obrigatória no cadastro (checkbox), guardada no perfil.
+- [ ] Confirmar semana começando na segunda (decidir na etapa 3).
+- [ ] Cadastro livre no plano gratuito: já mitigado por confirmação de e-mail obrigatória e limites do próprio Supabase. Avaliar convite/CAPTCHA se aparecer abuso.
+- [ ] Escolher o serviço de e-mail (SMTP) para enviar confirmações a amigos e família (ver `training-seasons/SUPABASE.md`, seção 6).
 - [x] Nome: Training Seasons. Paleta definida (seção 7).
 - [ ] Logo e ícone do PWA.
 - [ ] Quais conquistas/selos entram na v1.

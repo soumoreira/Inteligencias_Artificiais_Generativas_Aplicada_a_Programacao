@@ -1,7 +1,9 @@
-# Projeto: Controle de Peso (Web + PWA)
+# Projeto: Training Seasons
+
+> Aplicação web (PWA) de controle e acompanhamento de peso.
 
 > Documento de definição do projeto (premissas e escopo).
-> Status: **v0.1 – rascunho aprovado nas entrevistas** | Data: 2026-11-10
+> Status: **v0.2 – nome e paleta definidos** | Data: 2026-11-10
 > Itens marcados com **[A CONFIRMAR]** são suposições minhas, ainda não validadas.
 
 ---
@@ -95,8 +97,27 @@ e ver a evolução num gráfico claro, em qualquer aparelho.
 
 ## 7. Design e experiência
 
-- Estilo **colorido e motivador** (cores vibrantes, selos de conquista),
-  mantendo legibilidade e contraste adequado (acessibilidade AA).
+- Nome: **Training Seasons** (ideia de "estações": ciclos de treino/peso com começo, meio e fim; dá pra usar nas metas e conquistas, ex: "Temporada 1").
+- Estilo **motivador**, com paleta sóbria e de alto impacto (abaixo), selos de conquista
+  e mensagens de incentivo.
+- Legibilidade e contraste adequados (meta: WCAG AA).
+
+### Paleta de cores
+
+| Nome | Hex | Uso sugerido |
+|------|-----|--------------|
+| Azul-noite | `#0B1D3A` | Fundo do tema escuro, cabeçalho, texto principal no tema claro |
+| Azul | `#1F4E79` | Botões primários, links, linha do gráfico |
+| Vinho | `#6E0F1A` | Destaques fortes, estados de ênfase, selos de conquista |
+| Carmim | `#B23A48` | Ações de destaque, meta no gráfico, alertas leves |
+| Creme | `#F2E9E4` | Fundo do tema claro, texto sobre fundos escuros |
+
+Contraste (calculado, mínimo AA = 4,5:1 para texto normal):
+- Creme sobre azul-noite: 14,0 | creme sobre azul: 7,2 | creme sobre vinho: 10,1 | creme sobre carmim: 4,9 (ok)
+- Texto azul-noite, azul ou vinho sobre creme: ok (azul-noite ~14, azul 7,2, vinho 10,1)
+- **Não usar** carmim como texto sobre azul-noite (2,9) nem vinho/azul sobre azul-noite (1,4/1,9): servem só como cor de preenchimento/destaque com borda ou ícone, não texto.
+- Cores só do tema escuro/claro não bastam para informação: sempre combinar com ícone ou rótulo (não depender só de cor).
+
 - **Mobile-first:** botões grandes, uso com uma mão, formulário de registro
   em 1 tela.
 - Gráfico legível em tela pequena (sem rolagem horizontal da página).
@@ -168,6 +189,7 @@ Alternativas simples (se preferir menos peças): Vite + React + Supabase.
 - [ ] Aprovar a stack da seção 10.
 - [ ] Confirmar semana começando na segunda e "só maiores de 18".
 - [ ] Definir como lidar com cadastro livre no plano gratuito (limites/verificação).
-- [ ] Nome do projeto e identidade visual (paleta de cores, logo).
+- [x] Nome: Training Seasons. Paleta definida (seção 7).
+- [ ] Logo e ícone do PWA.
 - [ ] Quais conquistas/selos entram na v1.
 - [ ] Dia/horário padrão do lembrete semanal.

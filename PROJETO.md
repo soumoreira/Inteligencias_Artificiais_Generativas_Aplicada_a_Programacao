@@ -3,7 +3,7 @@
 > Aplicação web (PWA) de controle e acompanhamento de peso.
 
 > Documento de definição do projeto (premissas e escopo).
-> Status: **v0.2 – nome e paleta definidos** | Data: 2026-11-10
+> Status: **v0.3 – stack aprovada, etapa 1 em andamento** | Data: 2026-11-10
 > Itens marcados com **[A CONFIRMAR]** são suposições minhas, ainda não validadas.
 
 ---
@@ -158,13 +158,13 @@ Sugestão pensada para quem está começando, tudo com plano gratuito e muita do
 | PWA | Manifest + Service Worker (ex: `@serwist/next`) | Torna o site instalável e permite notificações |
 
 Alternativas simples (se preferir menos peças): Vite + React + Supabase.
-**[A CONFIRMAR]** aprovação da stack.
+**Aprovada** em 2026-11-10. O código fica na pasta `training-seasons/`.
 
 ---
 
 ## 11. Plano em etapas (sugestão)
 
-1. **Fundação:** projeto criado, deploy no ar, tela inicial responsiva.
+1. **Fundação:** projeto criado, tela inicial responsiva, PWA básico (manifest + ícones provisórios). **Feito.** Falta o deploy na Vercel (precisa da conta do dono do projeto).
 2. **Login:** cadastro, entrada, recuperar senha, regras de acesso no banco.
 3. **Núcleo:** perfil, meta, registro semanal, lista do histórico.
 4. **Visualização:** gráfico, IMC, progresso da meta.
@@ -186,7 +186,8 @@ Alternativas simples (se preferir menos peças): Vite + React + Supabase.
 
 ## 13. Pontos em aberto
 
-- [ ] Aprovar a stack da seção 10.
+- [x] Aprovar a stack da seção 10.
+- [ ] Fazer o deploy na Vercel (ver `training-seasons/README.md`).
 - [ ] Confirmar semana começando na segunda e "só maiores de 18".
 - [ ] Definir como lidar com cadastro livre no plano gratuito (limites/verificação).
 - [x] Nome: Training Seasons. Paleta definida (seção 7).

@@ -46,6 +46,8 @@ Depois vá em **Deployments → ⋯ → Redeploy**. Essas variáveis só valem a
 
 Isso cria a ficha de cada pessoa e liga o RLS: cada um só consegue ler e editar a própria ficha.
 
+**Etapa 3 (perfil e registro semanal de peso):** repita o mesmo procedimento com o arquivo `supabase/migrations/0002_registros_peso.sql`. Ele acrescenta altura, peso inicial e meta ao perfil e cria a tabela `registros_peso`, também protegida por RLS. Pode rodar mais de uma vez sem problema. Rode **depois** do `0001`.
+
 ## 5. Configurar o login
 
 ### 5.1 Endereços do site

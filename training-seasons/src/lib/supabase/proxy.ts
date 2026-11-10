@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { getSupabaseConfig } from "./config";
 
 // Áreas que exigem login e páginas que só fazem sentido para quem NÃO está logado.
-const ROTAS_PRIVADAS = ["/painel"];
+const ROTAS_PRIVADAS = ["/painel", "/perfil"];
 const ROTAS_SO_VISITANTE = ["/entrar", "/cadastro"];
 
 function redirecionar(request: NextRequest, destino: string, base: NextResponse) {

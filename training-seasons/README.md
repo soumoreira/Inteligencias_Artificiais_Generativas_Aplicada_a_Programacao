@@ -13,6 +13,7 @@ npm install
 npm run dev      # http://localhost:3000
 npm run build    # build de produção
 npm run lint
+npm test         # testes das regras de semana, números e meta
 ```
 
 ## Estrutura

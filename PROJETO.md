@@ -3,7 +3,7 @@
 > Aplicação web (PWA) de controle e acompanhamento de peso.
 
 > Documento de definição do projeto (premissas e escopo).
-> Status: **v0.4 – etapa 2 (login) implementada, aguardando configuração do Supabase** | Data: 2026-11-10
+> Status: **v0.5 – etapa 3 (perfil e registro semanal) implementada** | Data: 2026-11-10
 > Itens marcados com **[A CONFIRMAR]** são suposições minhas, ainda não validadas.
 
 ---
@@ -166,7 +166,7 @@ Alternativas simples (se preferir menos peças): Vite + React + Supabase.
 
 1. **Fundação:** projeto criado, tela inicial responsiva, PWA básico (manifest + ícones provisórios). **Feito.** Deploy na Vercel a cargo do dono do projeto.
 2. **Login:** cadastro, entrada, recuperar senha, regras de acesso no banco. **Código pronto** (telas, ações, proteção de rotas, SQL com RLS). Falta criar o projeto no Supabase e configurar (ver `training-seasons/SUPABASE.md`).
-3. **Núcleo:** perfil, meta, registro semanal, lista do histórico.
+3. **Núcleo:** perfil, meta, registro semanal, lista do histórico. **Código pronto e testado.** Falta rodar `supabase/migrations/0002_registros_peso.sql` no Supabase. No primeiro acesso, o painel mostra o formulário de perfil; o peso inicial vira o primeiro registro do histórico.
 4. **Visualização:** gráfico, IMC, progresso da meta.
 5. **PWA:** instalável + lembrete semanal.
 6. **Extras:** exportar CSV, tema escuro, conquistas/selos.
@@ -189,7 +189,7 @@ Alternativas simples (se preferir menos peças): Vite + React + Supabase.
 - [x] Aprovar a stack da seção 10.
 - [ ] Fazer o deploy na Vercel (ver `training-seasons/README.md`).
 - [x] "Só maiores de 18": implementado como confirmação obrigatória no cadastro (checkbox), guardada no perfil.
-- [ ] Confirmar semana começando na segunda (decidir na etapa 3).
+- [x] Semana começando na segunda-feira: adotada na etapa 3 (o banco garante que `semana` é sempre uma segunda). Fácil de trocar se preferir domingo.
 - [ ] Cadastro livre no plano gratuito: já mitigado por confirmação de e-mail obrigatória e limites do próprio Supabase. Avaliar convite/CAPTCHA se aparecer abuso.
 - [ ] Escolher o serviço de e-mail (SMTP) para enviar confirmações a amigos e família (ver `training-seasons/SUPABASE.md`, seção 6).
 - [x] Nome: Training Seasons. Paleta definida (seção 7).
